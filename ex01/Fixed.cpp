@@ -22,7 +22,7 @@ Fixed& Fixed::operator=(const Fixed& source)
 	return (*this);
 }
 
-Fixed::Fixed(Fixed &source)
+Fixed::Fixed(Fixed const &source)
 {
 	std::cout << "A Fixed number got spawned." << std::endl;
 	*this = source;

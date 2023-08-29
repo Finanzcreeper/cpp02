@@ -13,7 +13,7 @@ public:
 	Fixed();
 	Fixed(const int input);
 	Fixed(const float input);
-	Fixed(Fixed &source);
+	Fixed(Fixed const &source);
 	Fixed& operator=(const Fixed& source);
 	~Fixed();
 	int getRawBits(void) const;
