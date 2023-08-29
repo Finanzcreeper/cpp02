@@ -26,12 +26,21 @@ Fixed::Fixed(Fixed const &source)
 {
 	std::cout << "A Fixed number got spawned." << std::endl;
 	*this = source;
-	fixed = source.fixed;
 }
 
 Fixed::~Fixed()
 {
 	std::cout << "the deconstructor Wrecked a class." << std::endl;
+}
+
+float Fixed::toFloat(void) const
+{
+	return((float)fixed / (1 << fractional_bits));
+}
+
+int Fixed::toInt(void) const
+{
+	return(fixed >> fractional_bits);
 }
 
 int Fixed::getRawBits(void) const
@@ -44,4 +53,10 @@ void Fixed::setRawBits(int const raw)
 {
 	std::cout << "I put "<< raw << " into the class for you." << std::endl;
 	fixed = raw;
+}
+
+std::ostream& operator<<(std::ostream& out, const Fixed& source)
+{
+	out << source.toFloat();
+	return(out);
 }
