@@ -11,7 +11,7 @@ private:
 	static const int	fractional_bits = 8;
 public:
 	Fixed();
-	Fixed(Fixed &source);
+	Fixed(Fixed const &source);
 	Fixed& operator=(const Fixed& source);
 	~Fixed();
 	int getRawBits(void) const;
