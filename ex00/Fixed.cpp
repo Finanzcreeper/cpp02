@@ -1,13 +1,8 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed() : fixed (0)
-{}
-
-Fixed::Fixed(Fixed &source)
 {
 	std::cout << "A Fixed number got spawned." << std::endl;
-	*this = source;
-	fixed = source.fixed;
 }
 
 Fixed& Fixed::operator=(const Fixed& source)
@@ -15,6 +10,13 @@ Fixed& Fixed::operator=(const Fixed& source)
 	std::cout << "Mitosis complete." << std::endl;
 	fixed = source.fixed;
 	return (*this);
+}
+
+Fixed::Fixed(Fixed &source)
+{
+	std::cout << "A Fixed number got spawned." << std::endl;
+	*this = source;
+	fixed = source.fixed;
 }
 
 Fixed::~Fixed()
