@@ -14,14 +14,14 @@ Fixed& Fixed::operator=(const Fixed& source)
 
 Fixed::Fixed(Fixed const &source)
 {
-	std::cout << "A Fixed number got spawned." << std::endl;
+	std::cout << "Copy constructor startes mitosis" << std::endl;
 	*this = source;
 	fixed = source.fixed;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "the deconstructor Wrecked a class." << std::endl;
+	std::cout << this->getRawBits() <<"/0 = deletion" << std::endl;
 }
 
 int Fixed::getRawBits(void) const

@@ -18,7 +18,8 @@ Fixed::Fixed(const float input) : fixed (roundf (input * (1 << fractional_bits))
 Fixed& Fixed::operator=(const Fixed& source)
 {
 	std::cout << "Mitosis complete." << std::endl;
-	fixed = source.fixed;
+	if (this != &source)
+		fixed = source.fixed;
 	return (*this);
 }
 
